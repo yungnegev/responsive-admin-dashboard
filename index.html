@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <!-- Material icons cdn -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -67,8 +65,108 @@
             </div>
         </aside>
         <!-------------- MAIN -------------------->
-        <main>
-            
+        <main class="main">
+            <h1>Dashboard</h1>
+
+            <div class="date-container">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <!-- Sales card -->
+                <div class="sales">
+                    <span class="material-symbols-sharp">point_of_sale</span>
+                    <div class="card-content">
+                        <div class="card-content-left">
+                            <h3>Sales</h3>
+                            <h1>$15,078</h1>
+                        </div>
+                        <div class="card-content-progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="progress-percentage">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- Expenses card-->
+                <div class="expenses">
+                    <span class="material-symbols-sharp">receipt_long</span>
+                    <div class="card-content">
+                        <div class="card-content-left">
+                            <h3>Expenses</h3>
+                            <h1>$8,234</h1>
+                        </div>
+                        <div class="card-content-progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="progress-percentage">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- Income card -->
+                <div class="income">
+                    <span class="material-symbols-sharp">monitoring</span>
+                    <div class="card-content">
+                        <div class="card-content-left">
+                            <h3>Income</h3>
+                            <h1>$6,844</h1>
+                        </div>
+                        <div class="card-content-progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="progress-percentage">
+                                <p>73%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+            </div>
+
+            <!-- Recent orders section -->
+            <div class="recent-orders">
+                <h2>Recent orders</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Number</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Keycult PCB 60</td>
+                            <td>34512</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td>Details</td>
+                        </tr>
+                        <tr>
+                            <td>KBDFans 80 RGB</td>
+                            <td>34511</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td>Details</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+
+            </div>
+
         </main>
     </div>
 </body>
