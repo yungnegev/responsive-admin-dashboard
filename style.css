@@ -33,6 +33,16 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+/* ------------ Dark theme variables -------------- */
+.dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 /* Removing pre existing css  (the homemade way not the chunky copy paste from that page)*/
 
 
@@ -56,7 +66,7 @@ body{
     font-size: 0.88rem;
     background: var(--color-background);
     user-select: none;
-    overflow-x: hidden;
+    overflow-x: scroll;
     color: var(--color-dark);
 }
 html{
@@ -228,6 +238,9 @@ b{
 
 .sidebar-main a:hover{
     color: var(--color-primary);
+}
+.sidebar-main a:last-child:hover{
+    color: var(--color-danger);
 }
 
 /* Targeting the icon and giving it a little margin when hovered */
@@ -417,4 +430,285 @@ b{
     display: block;
     margin: 1rem auto;
     color: var(--color-primary);
+}
+
+/* ================ RIGHT SECTION ============== */
+.right-section{
+    margin-top: 1.4rem;
+}
+/* TOP SECTION */
+.right-section .top{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.update .profile-picture > img{ /* For some reason I had to add this */
+    width: 2.9rem;
+    height:2.9rem;
+}
+
+
+.right-section .top button{
+    display: none;
+}
+
+.right-section .theme-toggler{
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.right-section .theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggler span.active{
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.right-section .top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+/* TRENDING SECTION */
+.right-section .trending{
+    margin-top: 1rem;
+}
+
+.trending h2{
+    margin-bottom: 1rem;
+}
+
+.trending .updates{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+
+/* classic transition of shadow none */
+
+.trending .updates:hover{
+    box-shadow: none;
+}
+
+/* individual posts */
+
+.trending .updates .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+/* SALES ANAYTICS SECTION */
+
+.sales-analytics{
+    margin-top: 2rem;
+}
+.sales-analytics h2{
+    margin-bottom: 0.8rem;
+}
+
+.sales-analytics .item{
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.sales-analytics .item:hover{
+    box-shadow: none;
+}
+
+.sales-analytics .item .data{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+
+.sales-analytics .item .icon{
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+}
+
+.sales-analytics .item.offline .icon{
+    background: var(--color-danger);
+}
+.sales-analytics .item.customers .icon{
+    background: var(--color-success);
+}
+
+.sales-analytics .add-product{
+    background-color: transparent;
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sales-analytics .add-product > div{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.sales-analytics .add-product div h3{
+    font-weight: 600;
+}
+
+
+/* =================== MEDIA QUERIES ==================== */
+
+/*  Tablets  */
+
+@media screen and (max-width: 1200px) {
+    body{
+        overflow: scroll;
+    }
+    .board{
+        width: 94%;
+        grid-template-columns: 7rem auto 24rem;
+    }
+    .sidebar .logo h2{
+        display: none;
+    }
+    .sidebar h3{
+        display: none;
+    }
+    .sidebar a{
+        width: 5.6rem;
+    }
+    .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+    main .insights{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+
+/*  Mobile  */
+
+@media screen and (max-width: 768px) {
+    .board{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    aside{
+        position: fixed;
+        left: -100%;
+        background: var(--color-white);
+        width: 18rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        padding-right: var(--card-padding);
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+    .sidebar .logo{
+        margin-left: 1rem;
+    }
+    .sidebar .logo h2{
+        display: inline;
+    }
+    .sidebar h3{
+        display: inline;
+    }
+    .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+    .sidebar a:last-child{
+        position: absolute;
+        bottom: 5rem;
+    }
+    #close-btn{
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+     main .recent-orders{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+     }
+     main .recent-orders table{
+        width: 100%;
+        margin: 0;
+     }
+    .right-section{
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+    .right-section .top{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8;
+        height: 4.6rem;
+        width: 100%;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+        background: var(--color-background);
+    }
+    .right-section .top .theme-toggler{
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+    .right-section .profile .info{
+        display: none;
+    }
+    .right-section .top button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+    .recent-orders table thead tr:last-child{
+        display: none;
+    }
 }

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./orders.js" defer></script>
+    <script src="./main.js" defer></script>
 </head>
 <body>
     <div class="board">
@@ -147,27 +149,123 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>Keycult PCB 60</td>
                             <td>34512</td>
                             <td>Due</td>
                             <td class="warning">Pending</td>
                             <td>Details</td>
-                        </tr>
-                        <tr>
-                            <td>KBDFans 80 RGB</td>
-                            <td>34511</td>
-                            <td>Due</td>
-                            <td class="warning">Pending</td>
-                            <td>Details</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
                 <a href="#">Show All</a>
-
             </div>
-
         </main>
+        <!-------------- RIGHT SECTION------------->
+
+        <div class="right-section">
+            <!--    Top part     -->
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler" id="theme-btn">
+                    <span class="material-symbols-sharp active">light_mode</span>
+                    <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Arthur</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/user4.png">
+                    </div>
+                </div>
+            </div>
+            <!--       Trending      -->
+            <div class="trending">
+                <h2>Trending</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-picture">
+                            <img src="./images/user2.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Winston Smith</b> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid.</p>
+                            <small class="text-muted">12 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-picture">
+                            <img src="./images/user1.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Anna Mons</b> Recieved the kbd60!</p>
+                            <small class="text-muted">23 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-picture">
+                            <img src="./images/user3.png">
+                        </div>
+                        <div class="message">
+                            <p><b>Rose Namajunas</b> Ronda is lame.</p>
+                            <small class="text-muted">35 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---------- Sales analytics ------------>
+            <div class="sales-analytics">
+                <h2>Sales analytics</h2>
+                <div class="item online">
+                    <div class="icon">
+                    <span class="material-symbols-sharp active">shopping_cart</span>
+                    </div>
+                    <div class="data">
+                        <div class="info">
+                            <h3>ONLINE ORDERS</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                    <h5 class="success">+27%</h5>
+                    <h3>2349</h3>
+                    </div>
+                </div>
+                <div class="item offline">
+                    <div class="icon">
+                    <span class="material-symbols-sharp active">local_mall</span>
+                    </div>
+                    <div class="data">
+                        <div class="info">
+                            <h3>OVER THE COUNTER</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                    <h5 class="danger">-11%</h5>
+                    <h3>-987</h3>
+                    </div>
+                </div>
+                <div class="item customers">
+                    <div class="icon">
+                    <span class="material-symbols-sharp active">person</span>
+                    </div>
+                    <div class="data">
+                        <div class="info">
+                            <h3>NEW CUSTOMERS</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                    <h5 class="success">+4%</h5>
+                    <h3>787</h3>
+                    </div>
+                </div>
+                <div class="item add-product">
+                    <div>
+                        <span class="material-symbols-sharp active">add</span>
+                        <h3>Add Product</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
